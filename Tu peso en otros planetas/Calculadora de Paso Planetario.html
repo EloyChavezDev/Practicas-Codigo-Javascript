@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title> Calculadora de Paso Planetario </title>
+</head>
+<body>
+  <h1> Tu peso en otro planeta </h1>
+  <p> Tu peso en la Tierra es muy distinto en otros planetas </p>
+  <script>
+    var usuario = prompt("Cual es Tu peso en Kilogramos?");
+    var planeta = parseInt(prompt("Elige tu planeta. \n1 = Mercurio. \n2 = Venus. \n3 = Marte. \n4 = Jupiter. \n5 = Saturno. \n6 = Urano. \n7 = Neptuno."));
+    var peso = parseInt(usuario);
+    var g_tierra = 9.8;
+    var g_mercurio = 2.7;
+    var g_venus = 8.8;
+    var g_marte = 3.7;
+    var g_jupiter = 22.8;
+    var g_saturno = 9;
+    var g_urano = 7.7;
+    var g_neptuno = 11;
+    var peso_final;
+    var nombre;
+
+
+    if(planeta == 1)
+    {
+      //Calcula Mercurio
+      peso_final = peso * g_mercurio / g_tierra;
+      nombre = "Mercurio";
+    }
+    else if(planeta == 2)
+    {
+      //Calcula Venus
+      peso_final = peso * g_venus / g_tierra;
+      nombre = "Venus";
+    }
+    else if(planeta == 3)
+    {
+      //Calcula Marte
+      peso_final = peso * g_marte / g_tierra;
+      nombre = "Marte";
+    }
+    else if(planeta == 4)
+    {
+      //Calcula Jupiter
+      peso_final = peso * g_jupiter / g_tierra;
+      nombre = "Jupiter";
+    }
+    else if (planeta == 5)
+    {
+      peso_final = peso * g_saturno / g_tierra;
+      nombre = "Saturno";
+    }
+    else if (planeta == 6)
+    {
+      peso_final = peso * g_urano / g_tierra;
+      nombre = "Urano";
+    }
+    else if (planeta == 7)
+    {
+      peso_final = peso * g_neptuno / g_tierra;
+      nombre = "Neptuno";
+    }
+    else
+    {
+      peso_final = 100000000000;
+      nombre = "Kripton";
+    }
+    peso_final = parseInt(peso_final);
+    document.write("Tu peso en " + nombre + " es <strong> " + peso_final + " kilos. </strong> ");
+  </script>
+</body>
+</html>
