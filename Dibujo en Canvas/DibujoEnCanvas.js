@@ -1,5 +1,5 @@
 var estado = 0;          // estado del click
-var colorLinea = "blue";    // color a la linea
+var colorLinea = "blue";   // color a la linea
 
 var teclas =
   {
@@ -27,24 +27,24 @@ dibujarLinea("black", 0, 500, 0, 0, papel)
 // Funcion para mousemove
 function dibujarMouse(evento){
   if (estado == 1) {   // solo se dibujara si esta el click del mouse presionado
-    dibujarLinea(colorLinea, x, y, evento.layerX, evento.layerY, papel);
+    dibujarLinea(colorLinea, x, y, evento.offsetX, evento.offsetY, papel);
   }
-  x = evento.layerX;
-  y = evento.layerY;
+  x = evento.offsetX;
+  y = evento.offsetY;
 }
 
 // Funcion para mousedown
 function presionarMouse(evento){
   estado = 1;         //click presionado
-  x = evento.layerX;
-  y = evento.layerY;
+  x = evento.offsetX;
+  y = evento.offsetY;
 }
 
 // Funcion para mouseup
 function soltarMouse(evento){
   estado = 0;         // click suelto
-  x = evento.layerX;
-  y = evento.layerY;
+  x = evento.offsetX;
+  y = evento.offsetY;
 }
 function dibujarLinea(color, xinicial, yinicial, xfinal, yfinal, lienzo){
   lienzo.beginPath();                  // Inicia el trazo
@@ -86,3 +86,42 @@ function dibujarTeclado(evento)
   break;
   }
 }
+
+var botonRojo = document.getElementById('boton_Rojo');
+var botonVerde = document.getElementById('boton_Verde');
+var botonAzul = document.getElementById('boton_Azul');
+
+botonRojo.addEventListener('click', cambiarColorRojo);
+botonAzul.addEventListener('click', cambiarColorAzul);
+botonVerde.addEventListener('click', cambiarColorVerde);
+
+
+function cambiarColorRojo(evento) {
+  colorLinea = 'red';
+}
+function cambiarColorVerde(evento) {
+  colorLinea = 'green';
+}
+function cambiarColorAzul(evento) {
+  colorLinea = 'blue';
+}
+
+var buttonClear = document.getElementById("button_clean");
+buttonClear.addEventListener("click",clearCanvas);
+
+function clearCanvas() {
+	papel.clearRect(0, 0, 500, 500);
+  dibujarLinea("black", 0, 0, 500, 0, papel)
+  dibujarLinea("black", 500, 0, 500, 500, papel)
+  dibujarLinea("black", 500, 500, 0, 500, papel)
+  dibujarLinea("black", 0, 500, 0, 0, papel)
+}
+
+
+function download(){
+        var download = document.getElementById("download");
+        var image = document.getElementById("dibujito").toDataURL("image/png")
+                    .replace("image/png", "image/octet-stream");
+        download.setAttribute("href", image);
+
+    }

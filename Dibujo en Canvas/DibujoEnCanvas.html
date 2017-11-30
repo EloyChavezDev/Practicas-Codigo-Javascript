@@ -3,10 +3,22 @@
   <head>
     <meta charset="utf-8">
     <title>Dibuja</title>
+    <style>
+	canvas
+	{
+		background: white;
+		cursor: pointer;
+	}
+	</style>
   </head>
   <body>
     <canvas width="500" height="500" id="dibujito"></canvas>
-    <p><h1>Dibuja Moviendo el Mouse o las flechas del teclado</h1></p>
+    <p><h1>Dibuja Moviendo el Mouse o Usando las Flechas del Teclado</h1></p>
+    <input type="button" value="Azul" id="boton_Azul"></input>
+    <input type="button" value="Rojo" id="boton_Rojo"></input>
+    <input type="button" value="Verde" id="boton_Verde"></input>
+    <input type="button" value="Limpiar el Area de Dibujo" id="button_clean"></input>
+    <a id="download" download="image.png"><button type="button" onClick="download()">Guarda y Descarga Tu Dibujo</button></a>
     <script src="DibujoEnCanvas.js"></script>
   </body>
 </html>
