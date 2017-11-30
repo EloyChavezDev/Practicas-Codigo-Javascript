@@ -12,13 +12,28 @@
 	</style>
   </head>
   <body>
-    <canvas width="500" height="500" id="dibujito"></canvas>
+    <table>
+    <tr>
+    <td>
     <p><h1>Dibuja Moviendo el Mouse o Usando las Flechas del Teclado</h1></p>
+    <canvas width="500" height="500" id="dibujito"></canvas>
+    </td>
+    <td>
+    <br/>
+    <h3>Seleciona el color que deseas usar</h3>
     <input type="button" value="Azul" id="boton_Azul"></input>
     <input type="button" value="Rojo" id="boton_Rojo"></input>
     <input type="button" value="Verde" id="boton_Verde"></input>
+    <br/>
+    <h3>Limpia el area de dibujo</h3>
     <input type="button" value="Limpiar el Area de Dibujo" id="button_clean"></input>
+    <br/>
+    <h3>Descarga tu dibujo</h3>
     <a id="download" download="image.png"><button type="button" onClick="download()">Guarda y Descarga Tu Dibujo</button></a>
+    <h1><a href="https://jeloychavez.com/category/portafolio/programacion/">Regresar al sitio principal</a></h1>
+    </td>
+    </tr>
+    </table>
     <script src="DibujoEnCanvas.js"></script>
   </body>
 </html>
